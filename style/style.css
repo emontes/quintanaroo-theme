@@ -1,0 +1,95 @@
+@CHARSET "UTF-8";
+/* Common */
+html body {background: #F4F4F4;}
+body {background: white;font-size: 11px;font-family: "lucida grande",tahoma,verdana,arial,sans-serif;color: #333;line-height: 1.28;margin: 0;padding: 0;text-align: left;direction: ltr;unicode-bidi: embed;overflow-y: scroll;}
+
+ul {list-style-type: none;margin: 0;padding: 0;}
+ul, menu, dir {display: block;list-style-type: disc;-webkit-margin-before: 1em;-webkit-margin-after: 1em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;-webkit-padding-start: 40px;}
+li {display: list-item;text-align: -webkit-match-parent;}
+a {cursor: pointer;color: #3B5998;text-decoration: none;}
+h1, h2, h3, h4, h5, h6 {font-size: 13px;color: #333;margin: 0;padding: 0;}
+h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-after: 0.67em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;}
+
+.turistaWiki {font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;font-size: 11px;color: #333;margin: 0;font-size: 11px;}
+.turistaWiki .header, .turistaWiki .body, .turistaWiki .body p, .turistaWiki .body ul, .turistaWiki .body ol, .turistaWiki .body li, .turistaWiki .body th, .turistaWiki .body th, .turistaWiki .body td {font-size: 12px;}
+
+.turistaPage {min-width: 1024px;}
+.turistaPage .header h1 {margin: 0;font-size: 18px;font-weight: bold;}
+.turistaPage .menu {background: #3B5998;border-bottom: 1px solid #23487E;position: fixed;width: 100%;font-weight: bold;height: 33px;z-index: 300;}
+.turistaPage .menu .content {margin: 0 auto;padding: 0;width: 980px;}
+.turistaPage .menu a.topNavItem {color: white;display: block;float: left;line-height: 29px;padding: 2px 11px 2px;}
+.turistaPage .menu a.topNavItem:hover {background:#6D84B4;}
+.turistaPage .menu a.logo {line-height: 0;margin-right: 18px;padding: 7px 11px 9px 11px;}
+
+.turistaPage .body {background: #F4F4F4;padding: 50px 0 0 0;}
+.turistaPage .body > .content {background: white;border: 1px solid #D9D9D9;-webkit-border-radius: 3px;-webkit-box-shadow: #ddd 0 1px 1px;padding: 25px 20px 20px;border-image: initial;}
+.turistaPage .body .content {margin: auto;max-width: 940px;}
+.turistaPage .body .bodyMenu {
+	float: left;
+	margin-left: -20px;
+	overflow: hidden;
+	padding: 0 20px;
+	width: 166px;
+}
+.turistaPage .body .bodyMenu ul {list-style-type: none;padding: 0;margin: 0;margin-bottom: 0;}
+.turistaPage .bodyMenu .toplevelnav ul {list-style-type: none;margin: 0;padding: 0;}
+.turistaPage .bodyMenu .toplevelnav li:first-child, .turistaPage .developerAppDashLeft .bodyMenu .toplevelnav li.active:first-child {border-top: 1px solid #E5E5E5;}
+.turistaPage .bodyMenu .toplevelnav li {border-bottom: 1px solid #E5E5E5;line-height: 18px;font-size: 12px;}
+.turistaPage .body .bodyMenu li {margin: 0;}
+.turistaPage .body dl, .turistaPage table, .turistaPage .body pre, .turistaPage .body ul, .turistaPage .body ol, .turistaPage .body p {margin: 0;margin-bottom: 1em;}
+.turistaPage .body ol, .turistaPage .body ul {list-style-type: disc;padding-left: 3em;}
+.turistaPage .bodyMenu .toplevelnav li.active.withsubsections {background: #F2F7FC;border-top: 1px solid #D2DEE5;border-bottom: 1px solid #D2DEE5;margin: 0 -20px;margin-top: -1px;padding-bottom: 5px;}
+.turistaPage .bodyText {
+	width: 732px;
+	float: right;
+}
+
+.turistapage .bodyText .leftBlock{
+	float: left;
+	width:560px;
+}
+
+.turistaPage .bodyText .rightBlock {
+	float:right;
+	width:150px;
+	word-wrap: break-word;
+	
+}
+.turistaPage .nav > .content {background: white url(http://static.ak.fbcdn.net/rsrc.php/v1/yd/r/QzmkzK8kmHk.png) repeat-y;}
+/* .turistaPage .nav > .content {background: white url(themes/quintanaroo2012/bgtpnavco.gif) repeat-y;} */
+.turistaPage .clear {clear: both;}
+.turistaPage .footer {color: #777;padding-bottom: 30px;}
+.turistaPage .footer .content {margin: 0 auto;max-width: 980px;padding: 10px;}
+
+
+.turistaPage .menu .uiTypeahead {border: 0;border-image: initial;}
+.turistaPage .menu .search {
+	border: solid 1px #294A8F;
+	border-top: solid 1px #123682;
+	float: left;
+	margin: 4px 5px 4px 0;
+	width: 280px;
+	border-image: initial;
+}
+.turistaPage .menu .uiTypeahead {border: 0;border-image: initial;}
+.turistaPage .menu .uiSearchInput {border: 0;border-image: initial;}
+.turistaPage .menu .uiSearchInput input {width: 270px;}
+.turistaPage .menu .inputtext {border: 0;padding: 1px 4px;border-image: initial;}
+
+.turistaPage .leftCol {
+	width: 200px;
+	height: auto;
+	float: right;
+}
+.storyBox {border-bottom: 1px solid #E5E5E5;padding: 20px 15px}
+.storyBox .topic {width 50; height 50;display:block;margin-right:10px;float:left;}
+.storyBox .title {font-weight: bold;}
+.storyBox .innerContent {margin: 14px 25px 14px 0; display: table-cell;width: 10000px;}
+.storyBox .more {color: #999;font-size: 11px;}
+
+.fb6 {
+	border: 1px solid #cccccc;
+	background:#fff;
+	text-align:left;
+	/* [disabled]float: left; */
+}
