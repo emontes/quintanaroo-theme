@@ -188,7 +188,7 @@ function themearticle ($aid, $informant, $datetime, $title, $thetext, $topic, $t
 function themesidebox($title, $content) {
 	global $swapblock, $name, $ThemeSel;
 	if ($swapblock == "0") {
-		$tmpl_file = "themes/$TemeSel/blocks_Right.html";
+		$tmpl_file = "themes/$ThemeSel/blocks_Right.html";
 		if ($name == "News") {
 			$tmpl_file = "themes/$ThemeSel/Newsblocks.html";
 		}

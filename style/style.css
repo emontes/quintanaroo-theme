@@ -44,7 +44,7 @@ h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-a
 	float: right;
 }
 
-.leftBlock{
+.turistaPage .bodyText .leftBlock{
 	float: left;
 	 width:560px; 
 }
@@ -58,7 +58,7 @@ h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-a
 .turistaPage .nav > .content {background: white url(http://static.ak.fbcdn.net/rsrc.php/v1/yd/r/QzmkzK8kmHk.png) repeat-y;}
 /*.turistaPage .nav > .content {background: white url(https://github.com/emontes/quintanaroo-theme/raw/master/images/bgtpnavco.png) repeat-y;}*/
 .turistaPage .clear {clear: both;}
-.footer {color: #777;padding-bottom: 30px; margin: auto; width:982px; }
+.footer {color: #777;padding-bottom: 30px; margin: auto; width:992px; }
 .footer .content {margin: 0 auto;padding: 10px;widt: 380px;float: left; }
 .footer .contentB {margin: 0 auto;padding: 10px;widt: 600px; float: right; }
 
