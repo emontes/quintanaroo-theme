@@ -56,10 +56,11 @@ h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-a
 	
 }
 .turistaPage .nav > .content {background: white url(http://static.ak.fbcdn.net/rsrc.php/v1/yd/r/QzmkzK8kmHk.png) repeat-y;}
-/* .turistaPage .nav > .content {background: white url(themes/quintanaroo2012/bgtpnavco.gif) repeat-y;} */
+/*.turistaPage .nav > .content {background: white url(https://github.com/emontes/quintanaroo-theme/raw/master/images/bgtpnavco.png) repeat-y;}*/
 .turistaPage .clear {clear: both;}
-.turistaPage .footer {color: #777;padding-bottom: 30px;}
-.turistaPage .footer .content {margin: 0 auto;max-width: 980px;padding: 10px;}
+.footer {color: #777;padding-bottom: 30px; margin: auto; width:982px; }
+.footer .content {margin: 0 auto;padding: 10px;widt: 380px;float: left; }
+.footer .contentB {margin: 0 auto;padding: 10px;widt: 600px; float: right; }
 
 
 .turistaPage .menu .uiTypeahead {border: 0;border-image: initial;}
@@ -87,9 +88,14 @@ h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-a
 .storyBox .innerContent {margin: 14px 25px 14px 0; display: table-cell;width: 10000px;}
 .storyBox .more {color: #999;font-size: 11px;}
 
-.fb6 {
+.Table {
 	border: 1px solid #cccccc;
 	background:#fff;
 	text-align:left;
-	/* [disabled]float: left; */
 }
+
+.Table2 {
+	background:#fff;
+	text-align:left;
+}
+

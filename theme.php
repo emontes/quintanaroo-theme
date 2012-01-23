@@ -83,7 +83,10 @@ function themeheader() {
 
 function themefooter() {
 	global $index, $swapblock, $foot1, $foot2, $foot3, $foot4, $index, $name, $ThemeSel;
-	echo  ads ( 0 );
+	echo "<br>";
+	OpenTable2();		
+	echo ads ( 0 );
+	CloseTable2();
 	if (defined ( 'INDEX_FILE' ) or $index == 1) {
 		$swapblock = "0";		
 		imprime_template("themes/$ThemeSel/rightb.html");
@@ -92,14 +95,8 @@ function themefooter() {
 	} else {
 		imprime_template("themes/$ThemeSel/center_right.html");		
 	}
-	$footer_message = "$foot1<br />$foot2<br />$foot3<br />$foot4";
-	
-		imprime_template("themes/$ThemeSel/footer.html");
-
-
-	
-	
-	
+	$footer_message = "$foot1<br />$foot2<br />$foot3<br />$foot4";	
+	imprime_template("themes/$ThemeSel/footer.html");	
 }
 
 /************************************************************/

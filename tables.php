@@ -1,12 +1,12 @@
 <?php
 
 function OpenTable() {
-	echo "<div class='fb6'>";
+	echo "<div class='Table'>";
 }
 
 function OpenTable2() {
 
-	echo "<div class='tagstable'></div><div class='opentable'>";
+	echo "<div class='Table2'>";
 }
 
 function CloseTable() {
