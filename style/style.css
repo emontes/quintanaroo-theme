@@ -44,9 +44,9 @@ h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-a
 	float: right;
 }
 
-.turistapage .bodyText .leftBlock{
+.leftBlock{
 	float: left;
-	width:560px;
+	 width:560px; 
 }
 
 .turistaPage .bodyText .rightBlock {

@@ -83,12 +83,11 @@ function themeheader() {
 
 function themefooter() {
 	global $index, $swapblock, $foot1, $foot2, $foot3, $foot4, $index, $name, $ThemeSel;
-	
+	echo  ads ( 0 );
 	if (defined ( 'INDEX_FILE' ) or $index == 1) {
 		$swapblock = "0";		
 		imprime_template("themes/$ThemeSel/rightb.html");
-		echo "Bloque a la Derecha";
-		//blocks ( "right" );
+		blocks ( "right" );
 		imprime_template("themes/$ThemeSel/rightbb.html");
 	} else {
 		imprime_template("themes/$ThemeSel/center_right.html");		
