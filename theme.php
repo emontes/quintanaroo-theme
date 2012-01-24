@@ -58,9 +58,9 @@ function themeheader() {
 
 	
 	imprime_template("themes/$ThemeSel/header.html");
-	$swapblock = 1;
+	$swapblock = 1;	
 	imprime_template("themes/$ThemeSel/leftb.html");
-		blocks ( left );
+	blocks ( left );
 	imprime_template("themes/$ThemeSel/leftbb.html");
 	$swapblock = "0";
 	if (defined ( 'INDEX_FILE' ) or $index == 1) {	
@@ -84,16 +84,33 @@ function themeheader() {
 function themefooter() {
 	global $index, $swapblock, $foot1, $foot2, $foot3, $foot4, $index, $name, $ThemeSel;
 	echo "<br>";
-	OpenTable2();		
+	/* OpenTable2();		
 	echo ads ( 0 );
-	CloseTable2();
+	CloseTable2(); */
+	$banner = ads( 0 );
 	if (defined ( 'INDEX_FILE' ) or $index == 1) {
 		$swapblock = "0";		
-		imprime_template("themes/$ThemeSel/rightb.html");
-		blocks ( "right" );
-		imprime_template("themes/$ThemeSel/rightbb.html");
+		
+			imprime_template("themes/$ThemeSel/rightb.html");
+			//if ($name <> "News"){
+			blocks ( "right" );
+			//}
+			//imprime_template("themes/$ThemeSel/rightbb.html");
+			$tmpl_file = "themes/$ThemeSel/rightbb.html";
+			$thefile = implode("", file($tmpl_file));
+			$thefile = addslashes($thefile);
+			$thefile = "\$r_file=\"".$thefile."\";";
+			eval($thefile);
+			print $r_file;
+		
 	} else {
-		imprime_template("themes/$ThemeSel/center_right.html");		
+		//imprime_template("themes/$ThemeSel/center_right.html");	
+		$tmpl_file = "themes/$ThemeSel/center_right.html";
+		$thefile = implode("", file($tmpl_file));
+		$thefile = addslashes($thefile);
+		$thefile = "\$r_file=\"".$thefile."\";";
+		eval($thefile);
+		print $r_file;
 	}
 	$footer_message = "$foot1<br />$foot2<br />$foot3<br />$foot4";	
 	imprime_template("themes/$ThemeSel/footer.html");	
