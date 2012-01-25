@@ -206,20 +206,13 @@ function themearticle ($aid, $informant, $datetime, $title, $thetext, $topic, $t
 
 function themesidebox($title, $content) {
 	global $swapblock, $name, $ThemeSel;
-	if ($name=='News'){
-		$swapblock = 3;
-	}
-	switch ($swapblock) {
-		case 1:
-			$tmpl_file = "themes/$ThemeSel/blocks_Right.html";
-		break;
-		
-		case 3:
+	if ($swapblock == "1") {
+		$tmpl_file = "themes/$TemeSel/blocks_Right.html";
+		if ($name == "News") {
 			$tmpl_file = "themes/$ThemeSel/Newsblocks.html";
-		break;
-		
-		default:
-			$tmpl_file = "themes/$ThemeSel/blocks.html";
+		}
+	} else {
+		$tmpl_file = "themes/$ThemeSel/blocks.html";
 	}
 		
 	$thefile = implode("", file($tmpl_file));
