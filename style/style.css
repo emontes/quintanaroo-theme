@@ -21,16 +21,18 @@ h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-a
 .turistaPage .menu a.topNavItem:hover {background:#6D84B4;}
 .turistaPage .menu a.logo {line-height: 0;margin-right: 18px;padding: 7px 11px 9px 11px;}
 
+.turistaPage .menu .uiTypeahead {border: 0;border-image: initial;}
+.turistaPage .menu .search {border: solid 1px #294A8F;border-top: solid 1px #123682;float: left;margin: 4px 5px 4px 0;width: 280px;border-image: initial;}
+.turistaPage .menu .uiTypeahead {border: 0;border-image: initial;}
+.turistaPage .menu .uiSearchInput {border: 0;border-image: initial;}
+.turistaPage .menu .uiSearchInput input {width: 270px;}
+.turistaPage .menu .inputtext {border: 0;padding: 1px 4px;border-image: initial;}
+
+
 .turistaPage .body {background: #F4F4F4;padding: 50px 0 0 0;}
 .turistaPage .body > .content {background: white;border: 1px solid #D9D9D9;-webkit-border-radius: 3px;-webkit-box-shadow: #ddd 0 1px 1px;padding: 25px 20px 20px;border-image: initial;}
 .turistaPage .body .content {margin: auto;max-width: 940px;}
-.turistaPage .body .bodyMenu {
-	float: left;
-	margin-left: -20px;
-	overflow: hidden;
-	padding: 0 20px;
-	width: 166px;
-}
+.turistaPage .body .bodyMenu {float: left;margin-left: -20px;overflow: hidden;padding: 0 20px;width: 166px;}
 .turistaPage .body .bodyMenu ul {list-style-type: none;padding: 0;margin: 0;margin-bottom: 0;}
 .turistaPage .bodyMenu .toplevelnav ul {list-style-type: none;margin: 0;padding: 0;}
 .turistaPage .bodyMenu .toplevelnav li:first-child, .turistaPage .developerAppDashLeft .bodyMenu .toplevelnav li.active:first-child {border-top: 1px solid #E5E5E5;}
@@ -40,8 +42,10 @@ h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-a
 .turistaPage .body ol, .turistaPage .body ul {list-style-type: disc;padding-left: 3em;}
 .turistaPage .bodyMenu .toplevelnav li.active.withsubsections {background: #F2F7FC;border-top: 1px solid #D2DEE5;border-bottom: 1px solid #D2DEE5;margin: 0 -20px;margin-top: -1px;padding-bottom: 5px;}
 .turistaPage .bodyText {	width: 732px;float: right;}
+
 .turistaPage .bodyText .leftBlock{float: left;width:560px; }
 .turistaPage .bodyText .rightBlock {float:right;width:150px;word-wrap: break-word;	}
+
 .turistaPage .nav > .content {background: white url(http://static.ak.fbcdn.net/rsrc.php/v1/yd/r/QzmkzK8kmHk.png) repeat-y;}
 /*.turistaPage .nav > .content {background: white url(https://github.com/emontes/quintanaroo-theme/raw/master/images/bgtpnavco.png) repeat-y;}*/
 .turistaPage .clear {clear: both;}
@@ -49,19 +53,9 @@ h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-a
 .turistaPage .footer .content {margin: 0 auto;padding: 10px;widt: 380px;float: left; }
 .turistaPage .footer .contentB {margin: 0 auto;padding: 10px;widt: 600px; float: right; }
 
-.turistaPage .menu .uiTypeahead {border: 0;border-image: initial;}
-.turistaPage .menu .search {border: solid 1px #294A8F;border-top: solid 1px #123682;float: left;margin: 4px 5px 4px 0;width: 280px;border-image: initial;}
-.turistaPage .menu .uiTypeahead {border: 0;border-image: initial;}
-.turistaPage .menu .uiSearchInput {border: 0;border-image: initial;}
-.turistaPage .menu .uiSearchInput input {width: 270px;}
-.turistaPage .menu .inputtext {border: 0;padding: 1px 4px;border-image: initial;}
 
 .turistaPage .leftCol {	width: 200px;height: auto;float: right;}
-.turistaPage .Banner {
-	clear: both;
-	background:#fff;
-	text-align:left;
-}
+.turistaPage .Banner {clear: both;background:#fff;text-align:left;}
 
 .storyBox {border-bottom: 1px solid #E5E5E5;padding: 20px 15px}
 .storyBox .topic {width 50; height 50;display:block;margin-right:10px;float:left;}
@@ -69,14 +63,6 @@ h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-a
 .storyBox .innerContent {margin: 14px 25px 14px 0; display: table-cell;width: 10000px;}
 .storyBox .more {color: #999;font-size: 11px;}
 
-.Table {
-	border: 1px solid #cccccc;
-	background:#fff;
-	text-align:left;
-}
-
-.Table2 {
-	background:#fff;
-	text-align:left;
-}
+.Table {border: 1px solid #cccccc;background:#fff;text-align:left;}
+.Table2 {background:#fff;text-align:left;}
 

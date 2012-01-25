@@ -51,6 +51,9 @@ function imprime_template($tmpl_file){
 /* Control the header for your site. You need to define the */
 /* BODY tag and in some part of the code call the blocks    */
 /* function for left side with: blocks(left);               */
+/* $swapblock = 0 - Regular Block
+/* $swapblock = 1 - Right Block						*/
+
 /************************************************************/
 
 function themeheader() {
@@ -58,11 +61,11 @@ function themeheader() {
 
 	
 	imprime_template("themes/$ThemeSel/header.html");
-	$swapblock = 1;	
+	$swapblock = 0;	
 	imprime_template("themes/$ThemeSel/leftb.html");
 	blocks ( left );
 	imprime_template("themes/$ThemeSel/leftbb.html");
-	$swapblock = "0";
+	$swapblock = "1";
 	if (defined ( 'INDEX_FILE' ) or $index == 1) {	
 		imprime_template ("themes/$ThemeSel/left_center.html");		
 	}else{
@@ -82,19 +85,18 @@ function themeheader() {
 /************************************************************/
 
 function themefooter() {
-	global $index, $swapblock, $foot1, $foot2, $foot3, $foot4, $index, $name, $ThemeSel;
+	global $index, $swapblock, $foot1, $foot2, $foot3, $foot4, $index, $name, $ThemeSel, $sid;
 	echo "<br>";
-	/* OpenTable2();		
-	echo ads ( 0 );
-	CloseTable2(); */
+	
 	$banner = ads( 0 );
-	if (defined ( 'INDEX_FILE' ) or $index == 1) {
-		$swapblock = "0";		
-		
-			imprime_template("themes/$ThemeSel/rightb.html");
-			//if ($name <> "News"){
-			blocks ( "right" );
-			//}
+	$print_right = false;
+	if (defined ( 'INDEX_FILE' ) or $index == 1) { $print_right=true; }
+	if ( ($name=="News") and isset($sid) ){ $print_right=false; }
+	
+	if ( $print_right ) {
+		$swapblock = "1";			
+		imprime_template("themes/$ThemeSel/rightb.html");		    		    
+				blocks ( "right" );		    
 			//imprime_template("themes/$ThemeSel/rightbb.html");
 			$tmpl_file = "themes/$ThemeSel/rightbb.html";
 			$thefile = implode("", file($tmpl_file));
@@ -204,16 +206,22 @@ function themearticle ($aid, $informant, $datetime, $title, $thetext, $topic, $t
 
 function themesidebox($title, $content) {
 	global $swapblock, $name, $ThemeSel;
-	if ($swapblock == "0") {
-		$tmpl_file = "themes/$ThemeSel/blocks_Right.html";
-		if ($name == "News") {
-			$tmpl_file = "themes/$ThemeSel/Newsblocks.html";
-		}
-	} else {
-		$tmpl_file = "themes/$ThemeSel/blocks.html";
+	if ($name=='News'){
+		$swapblock = 3;
 	}
-	
-	
+	switch ($swapblock) {
+		case 1:
+			$tmpl_file = "themes/$ThemeSel/blocks_Right.html";
+		break;
+		
+		case 3:
+			$tmpl_file = "themes/$ThemeSel/Newsblocks.html";
+		break;
+		
+		default:
+			$tmpl_file = "themes/$ThemeSel/blocks.html";
+	}
+		
 	$thefile = implode("", file($tmpl_file));
 	$thefile = addslashes($thefile);
 	$thefile = "\$r_file=\"".$thefile."\";";
