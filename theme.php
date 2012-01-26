@@ -105,8 +105,8 @@ function themeheader() {
 /************************************************************/
 
 function themefooter() {
-	global $index, $swapblock, $foot1, $foot2, $foot3, $foot4, $index, $name, $ThemeSel, $sid;
-	echo "<br>";
+	global $index, $swapblock, $index, $name, $ThemeSel, $sid, $currentlang;
+
 	
 	$banner = ads( 0 );
 	$print_right = false;
@@ -134,8 +134,37 @@ function themefooter() {
 		eval($thefile);
 		print $r_file;
 	}
-	$footer_message = "$foot1<br />$foot2<br />$foot3<br />$foot4";	
-	imprime_template("themes/$ThemeSel/footer.html");	
+	
+	// rutinilla para que se quede en la misma página al hacer un cambio de idioma
+	$MySelf = $_SERVER['PHP_SELF'];
+	$MyGet  = $MySelf . "?";
+	if ($_GET) {
+		foreach ($_GET as $k => $v) {
+			$_GET[$k] = $v;
+			if ($k != "newlang"){
+				$MyGet .= "$k=$v&";
+			}
+		}
+	}
+	if (!$_GET['name'] && strstr($MySelf, "modules.php")){
+		$MyGet = "index.php?";
+	}
+	// termina rutinilla
+	if ($currentlang=='spanish'){
+		$nuevoidioma="english";
+		$letidioma="View this page in English";
+	} else {
+		$nuevoidioma.="spanish";
+		$letidioma="Ver esta p&aacute;gina en Español";
+	}
+	$cambioidioma = "<a href=\"".$MyGet."newlang=$nuevoidioma\"><img src=\"images/language/flag-$nuevoidioma.png\" alt=\"$letidioma\" title=\"$letidioma\"></a>";
+	
+	$tmpl_file = "themes/$ThemeSel/footer.html";
+	$thefile = implode("", file($tmpl_file));
+	$thefile = addslashes($thefile);
+	$thefile = "\$r_file=\"".$thefile."\";";
+	eval($thefile);
+	print $r_file;
 }
 
 /************************************************************/
