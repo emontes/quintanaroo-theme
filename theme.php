@@ -59,8 +59,28 @@ function imprime_template($tmpl_file){
 function themeheader() {
 	global $user, $banners, $sitename, $slogan, $cookie, $prefix, $anonymous, $swapblock, $name, $db, $subsbanner, $index, $name, $op, $ThemeSel;
 
-	
-	imprime_template("themes/$ThemeSel/header.html");
+	switch ($name){
+		case "hoteles":
+			$topmenu = "
+			<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=ofertas&nowpage=1>Ofertas</a>
+			<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=economicos&nowpage=1>Econ&oacute;micos</a>
+			<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=noche-gratis&nowpage=1>Noche Gr&aacute;tis</a>
+			<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=completos&nowpage=1>M&aacute;s completos</a>
+			<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=grandes&nowpage=1>M&aacute;s grandes</a>";
+			
+		break;
+		
+		default:
+		  $topmenu = "<a class=\"topNavItem\" href=\"modules.php?name=hoteles\">Hoteles</a> <a class=\"topNavItem\" href=\"modules.php?name=rentaautos\">Renta de Autos</a>
+		   <a class=\"topNavItem\" href=\"modules.php?name=boletosavion\">Boletos de Avión</a>
+		   <a class=\"topNavItem\" href=\"modules.php?name=Fotos\">Fotos</a>";	
+	}
+	$tmpl_file ="themes/$ThemeSel/header.html";
+	$thefile = implode ( "", file ( $tmpl_file ) );
+	$thefile = addslashes ( $thefile );
+	$thefile = "\$r_file=\"" . $thefile . "\";";
+	eval ( $thefile );
+	print $r_file;
 	$swapblock = 0;	
 	imprime_template("themes/$ThemeSel/leftb.html");
 	blocks ( left );
@@ -92,11 +112,11 @@ function themefooter() {
 	$print_right = false;
 	if (defined ( 'INDEX_FILE' ) or $index == 1) { $print_right=true; }
 	if ( ($name=="News") and isset($sid) ){ $print_right=false; }
-	
+	if ( ($name=="hoteles")){$print_right=false;}
 	if ( $print_right ) {
-		$swapblock = "1";			
+		$swapblock = "1";		
 		imprime_template("themes/$ThemeSel/rightb.html");		    		    
-				blocks ( "right" );		    
+			blocks ( "right" );		    
 			//imprime_template("themes/$ThemeSel/rightbb.html");
 			$tmpl_file = "themes/$ThemeSel/rightbb.html";
 			$thefile = implode("", file($tmpl_file));
@@ -207,7 +227,7 @@ function themearticle ($aid, $informant, $datetime, $title, $thetext, $topic, $t
 function themesidebox($title, $content) {
 	global $swapblock, $name, $ThemeSel;
 	if ($swapblock == "1") {
-		$tmpl_file = "themes/$TemeSel/blocks_Right.html";
+		$tmpl_file = "themes/$ThemeSel/blocks_Right.html";
 		if ($name == "News") {
 			$tmpl_file = "themes/$ThemeSel/Newsblocks.html";
 		}
