@@ -8,7 +8,7 @@ ul, menu, dir {display: block;list-style-type: disc;-webkit-margin-before: 1em;-
 li {display: list-item;text-align: -webkit-match-parent;}
 a {cursor: pointer;color: #3B5998;text-decoration: none;}
 h1, h2, h3, h4, h5, h6 {font-size: 13px;color: #333;margin: 0;padding: 0;}
-h1 {display: block;font-size: 2em;-webkit-margin-before: 0.67em;-webkit-margin-after: 0.67em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;}
+h1 {display: block;font-size: 20px;-webkit-margin-before: 0.67em;-webkit-margin-after: 0.67em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;font-weight: bold;}
 
 .turistaWiki {font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;font-size: 11px;color: #333;margin: 0;font-size: 11px;}
 .turistaWiki .header, .turistaWiki .body, .turistaWiki .body p, .turistaWiki .body ul, .turistaWiki .body ol, .turistaWiki .body li, .turistaWiki .body th, .turistaWiki .body th, .turistaWiki .body td {font-size: 12px;}
@@ -68,12 +68,22 @@ border-image: initial;
 .turistaPage .footer {color: #777;padding-bottom: 30px; margin: auto; width:992px; }
 .turistaPage .footer .content {margin: 0 auto;padding: 10px;widt: 380px;float: left; }
 .turistaPage .footer .contentB {margin: 0 auto;padding: 10px;widt: 600px; float: right; }
+.turistaPage .footer .social-sites {padding-top: 10px;}
+.turistaPage .footer .social-sites .footer-list {
+margin-top: 3px;
+line-height: 8px;
+}
+.turistaPage .footer .social-sites .footer-list li {
+list-style-type: none;
+padding: 2px 4px;
+float: left;
+}
 
 
 .turistaPage .leftCol {	width: 200px;height: auto;float: right;}
 .turistaPage .Banner {clear: both;background:#fff;text-align:left;}
 
-.storyBox {border-bottom: 1px solid #E5E5E5;padding: 20px 15px}
+.storyBox {border-bottom: 1px solid #E5E5E5;padding: 10px 15px}
 .storyBox .topic {width 50; height 50;display:block;margin-right:10px;float:left;}
 .storyBox .title {font-weight: bold;}
 .storyBox .innerContent {margin: 14px 25px 14px 0; display: table-cell;width: 10000px;}
