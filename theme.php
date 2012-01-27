@@ -112,12 +112,11 @@ function themefooter() {
 	$print_right = false;
 	if (defined ( 'INDEX_FILE' ) or $index == 1) { $print_right=true; }
 	if ( ($name=="News") and isset($sid) ){ $print_right=false; }
-	if ( ($name=="hoteles")){$print_right=false;}
+	if ( ($name=="hoteles")  ){$print_right=false;}
 	if ( $print_right ) {
 		$swapblock = "1";		
 		imprime_template("themes/$ThemeSel/rightb.html");		    		    
 			blocks ( "right" );		    
-			//imprime_template("themes/$ThemeSel/rightbb.html");
 			$tmpl_file = "themes/$ThemeSel/rightbb.html";
 			$thefile = implode("", file($tmpl_file));
 			$thefile = addslashes($thefile);
@@ -157,7 +156,7 @@ function themefooter() {
 		$nuevoidioma.="spanish";
 		$letidioma="Ver esta p&aacute;gina en Español";
 	}
-	$cambioidioma = "<a href=\"".$MyGet."newlang=$nuevoidioma\"><img src=\"images/language/flag-$nuevoidioma.png\" alt=\"$letidioma\" title=\"$letidioma\"></a>";
+	$cambioidioma = "<a href=\"".$MyGet."newlang=$nuevoidioma\"><img src=\"images/language/flag-$nuevoidioma.png\" alt=\"$letidioma\" title=\"$letidioma\" border=\"0\"></a>";
 	
 	$tmpl_file = "themes/$ThemeSel/footer.html";
 	$thefile = implode("", file($tmpl_file));
