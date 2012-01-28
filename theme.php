@@ -71,9 +71,9 @@ function themeheader() {
 		break;
 		
 		default:
-		  $topmenu = "<a class=\"topNavItem\" href=\"modules.php?name=hoteles\">Hoteles</a> <a class=\"topNavItem\" href=\"modules.php?name=rentaautos\">Renta de Autos</a>
-		   <a class=\"topNavItem\" href=\"modules.php?name=boletosavion\">Boletos de Avión</a>
-		   <a class=\"topNavItem\" href=\"modules.php?name=Fotos\">Fotos</a>";	
+		  $topmenu = "<a class=\"topNavItem\" href=\"modules.php?name=vacation\">Find Your Vacation</a> <a class=\"topNavItem\" href=\"modules.php?name=rentaautos\">Car Rental</a>
+		   <a class=\"topNavItem\" href=\"modules.php?name=boletosavion\">Plane Tickets</a>
+		   <a class=\"topNavItem\" href=\"modules.php?name=Nuke_Flogr\">Photo Gallery</a>";	
 	}
 	$tmpl_file ="themes/$ThemeSel/header.html";
 	$thefile = implode ( "", file ( $tmpl_file ) );

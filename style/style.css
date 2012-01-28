@@ -62,8 +62,8 @@ border-image: initial;
 .turistaPage .bodyText .leftBlock{float: left;width:560px; }
 .turistaPage .bodyText .rightBlock {float:right;width:150px;word-wrap: break-word;	}
 
-.turistaPage .nav > .content {background: white url(http://static.ak.fbcdn.net/rsrc.php/v1/yd/r/QzmkzK8kmHk.png) repeat-y;}
-/* .turistaPage .nav > .content {background: white url(http://quintanaroo.turista.com.mx/themes/quintanaroo2012/images/bgtpnavco.png) repeat-y;} */
+/* .turistaPage .nav > .content {background: white url(http://static.ak.fbcdn.net/rsrc.php/v1/yd/r/QzmkzK8kmHk.png) repeat-y;} */
+.turistaPage .nav > .content {background: white url(http://funvacationworld.com/themes/vacation2012/images/bgtpnavco.png) repeat-y;}
 .turistaPage .clear {clear: both;}
 .turistaPage .footer {color: #777;padding-bottom: 30px; margin: auto; width:992px; }
 .turistaPage .footer .content {margin: 0 auto;padding: 10px;widt: 380px;float: left; }
