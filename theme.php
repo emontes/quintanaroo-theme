@@ -57,16 +57,33 @@ function imprime_template($tmpl_file){
 /************************************************************/
 
 function themeheader() {
-	global $user, $banners, $sitename, $slogan, $cookie, $prefix, $anonymous, $swapblock, $name, $db, $subsbanner, $index, $name, $op, $ThemeSel;
-
-	switch ($name){
+	global $user, $banners, $sitename, $slogan, $cookie, $prefix, $anonymous, $swapblock, $name, $db, $subsbanner, $index, $name, $op, $ThemeSel,$currentlang;
+	if ($name == 'hoteles' and $op == 'ubica') {
+		echo "<body class=\"turistaWiki\" onload=\"inicializamapa()\">\n\n";
+	} else {
+		echo "<body class=\"turistaWiki\">";
+	}
+	switch ($name){		
 		case "hoteles":
-			$topmenu = "
-			<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=ofertas&nowpage=1>Ofertas</a>
-			<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=economicos&nowpage=1>Econ&oacute;micos</a>
-			<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=noche-gratis&nowpage=1>Noche Gr&aacute;tis</a>
-			<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=completos&nowpage=1>M&aacute;s completos</a>
-			<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=grandes&nowpage=1>M&aacute;s grandes</a>";
+			global $selvista,$hotelid;
+			if(!isset($selvista)){
+				$topmenu = "
+				<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=ofertas&nowpage=1>Ofertas</a>
+				<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=economicos&nowpage=1>Econ&oacute;micos</a>
+				<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=noche-gratis&nowpage=1>Noche Gr&aacute;tis</a>
+				<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=completos&nowpage=1>M&aacute;s completos</a>
+				<a class=\"topNavItem\" href=modules.php?name=hoteles&filtro=grandes&nowpage=1>M&aacute;s grandes</a>";
+			} else {
+				$topmenu = "";
+			}
+			if(isset($hotelid)){
+				$paghotel = "modules.php?name=" . _MODULE_NAME . "&amp;file=hotel&amp;hotelid=$hotelid&amp;newlang=$currentlang";
+				$topmenu = "<a class=\"topNavItem\" href=\"$paghotel\">"._HOTELDESCRIPTION."</a>                   
+                    <a class=\"topNavItem\" href=\"$paghotel&amp;op=ubica\">"._LOCATION."</a>
+                    <a class=\"topNavItem\" href=\"$paghotel&amp;op=fotos\">"._GALERIAFOTOS."</a>
+                    <a class=\"topNavItem\" href=\"$paghotel&amp;op=ratesbd\">"._BOOKBYTRAVELAGENCY."</a>";
+				
+			}
 			
 		break;
 		
@@ -83,7 +100,9 @@ function themeheader() {
 	print $r_file;
 	$swapblock = 0;	
 	imprime_template("themes/$ThemeSel/leftb.html");
-	blocks ( left );
+
+		blocks ( left );
+
 	imprime_template("themes/$ThemeSel/leftbb.html");
 	$swapblock = "1";
 	if (defined ( 'INDEX_FILE' ) or $index == 1) {	
