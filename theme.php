@@ -58,11 +58,7 @@ function imprime_template($tmpl_file){
 
 function themeheader() {
 	global $user, $banners, $sitename, $slogan, $cookie, $prefix, $anonymous, $swapblock, $name, $db, $subsbanner, $index, $name, $op, $ThemeSel,$currentlang;
-	if ($name == 'hoteles' and $op == 'ubica') {
-		echo "<body class=\"turistaWiki\" onload=\"inicializamapa()\">\n\n";
-	} else {
-		echo "<body class=\"turistaWiki\">";
-	}
+	echo "<body class=\"turistaWiki\">";
 	switch ($name){		
 		case "hoteles":
 			global $selvista,$hotelid;
